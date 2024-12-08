@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import About from './About';
@@ -41,7 +52,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className=" p-4">
+      <nav className="p-4">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo with increased size and hover effect */}
           <div className="flex-shrink-0">
@@ -52,10 +63,11 @@ const Navbar = () => {
             />
           </div>
           <div className="md:hidden">
-            <button onClick={toggleNav} className="text-white focus:outline-none">
-              {navOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <button onClick={toggleNav} className="text-black  ">
+              {navOpen ? <FaTimes size={20} /> : <FaBars size={24} />}
             </button>
           </div>
+          {/* Navigation links for medium and larger screens */}
           <div className={`md:flex items-center space-x-6 ${navOpen ? 'block' : 'hidden'} md:block`}>
             {/* Navbar links with black text and hover effect */}
             <Link to="/" className="text-black flex items-center space-x-2 hover:text-blue-500 transition-colors duration-300">
@@ -78,6 +90,7 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -96,9 +109,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
 
 
